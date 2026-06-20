@@ -15,20 +15,20 @@ namespace CityHospitalManagementSystem.Models
         public int BedId { get; set; }
 
         [Required]
-        public string AdmissionType { get; set; }
+        public string AdmissionType { get; set; } = string.Empty;
 
         public DateTime AdmissionDate { get; set; }
 
         public DateTime? DischargeDate { get; set; }
 
-        public string Status { get; set; }
+        public string Status { get; set; } = "Admitted";
 
-        public Patient Patient { get; set; }
+        public Patient? Patient { get; set; }
 
-        public Doctor Doctor { get; set; }
+        public Doctor? Doctor { get; set; }
 
-        public Ward Ward { get; set; }
+        public Ward? Ward { get; set; }
 
-        public Bed Bed { get; set; }
+        public Bed? Bed { get; set; }
     }
 }
