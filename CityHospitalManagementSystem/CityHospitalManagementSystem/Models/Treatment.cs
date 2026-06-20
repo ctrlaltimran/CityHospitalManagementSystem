@@ -17,6 +17,6 @@ namespace CityHospitalManagementSystem.Models
 
         public string Notes { get; set; }
 
-        public Admission Admission { get; set; }
+        public Admission? Admission { get; set; }
     }
 }

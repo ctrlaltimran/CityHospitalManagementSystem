@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CityHospitalManagementSystem.Models.Treatment>
+
+@{
+    ViewData["Title"] = "Treatments";
+}
+
+<h1>Treatments</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Treatment</a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Admission Id</th>
+            <th>Treatment Date</th>
+            <th>Treatment Details</th>
+            <th>Medicine Given</th>
+            <th>Notes</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.AdmissionId</td>
+                <td>@item.TreatmentDate.ToString("dd-MMM-yyyy")</td>
+                <td>@item.TreatmentDetails</td>
+                <td>@item.MedicineGiven</td>
+                <td>@item.Notes</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.TreatmentId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.TreatmentId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.TreatmentId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
