@@ -1,101 +1,50 @@
 @model IEnumerable<CityHospitalManagementSystem.Models.Admission>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Admissions";
 }
 
-<h1>Index</h1>
+<h1>Admissions</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New Admission</a>
 </p>
-<table class="table">
+
+<table class="table table-bordered table-striped">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PatientId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DoctorId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WardId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BedId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AdmissionType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AdmissionDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DischargeDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Patient)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Doctor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ward)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Bed)
-            </th>
-            <th></th>
+            <th>Patient</th>
+            <th>Doctor</th>
+            <th>Ward</th>
+            <th>Bed</th>
+            <th>Admission Type</th>
+            <th>Admission Date</th>
+            <th>Discharge Date</th>
+            <th>Status</th>
+            <th>Actions</th>
         </tr>
     </thead>
+
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(model => item.PatientId)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.DoctorId)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.WardId)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.BedId)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.AdmissionType)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.AdmissionDate)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.DischargeDate)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.Patient)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.Doctor)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.Ward)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.Bed)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.AdmissionId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.AdmissionId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.AdmissionId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Patient?.FullName</td>
+                <td>@item.Doctor?.FullName</td>
+                <td>@item.Ward?.WardName</td>
+                <td>@item.Bed?.BedNumber</td>
+                <td>@item.AdmissionType</td>
+                <td>@item.AdmissionDate.ToString("dd-MMM-yyyy")</td>
+                <td>
+                    @(item.DischargeDate == null ? "Not Discharged" : item.DischargeDate.Value.ToString("dd-MMM-yyyy"))
+                </td>
+                <td>@item.Status</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.AdmissionId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.AdmissionId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.AdmissionId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
