@@ -11,11 +11,11 @@ namespace CityHospitalManagementSystem.Models
         public DateTime TreatmentDate { get; set; }
 
         [Required]
-        public string TreatmentDetails { get; set; }
+        public string TreatmentDetails { get; set; } = string.Empty;
 
-        public string MedicineGiven { get; set; }
+        public string? MedicineGiven { get; set; }
 
-        public string Notes { get; set; }
+        public string? Notes { get; set; }
 
         public Admission? Admission { get; set; }
     }

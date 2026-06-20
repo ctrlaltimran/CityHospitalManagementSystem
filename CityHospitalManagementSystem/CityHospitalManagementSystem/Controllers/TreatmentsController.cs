@@ -1,150 +1,130 @@
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CityHospitalManagementSystem.Models;
 using CityHospitalManagementSystem.Data;
 
-public class TreatmentsController : Controller
+namespace CityHospitalManagementSystem.Controllers
 {
-    private readonly HospitalDbContext _context;
-
-    public TreatmentsController(HospitalDbContext context)
+    public class TreatmentsController : Controller
     {
-        _context = context;
-    }
+        private readonly HospitalDbContext _context;
 
-    // GET: TREATMENTS
-    public async Task<IActionResult> Index()    
-    {
-        return View(await _context.Treatments.ToListAsync());
-    }
-
-    // GET: TREATMENTS/Details/5
-    public async Task<IActionResult> Details(int? treatmentid)
-    {
-        if (treatmentid == null)
+        public TreatmentsController(HospitalDbContext context)
         {
-            return NotFound();
+            _context = context;
         }
 
-        var treatment = await _context.Treatments
-            .FirstOrDefaultAsync(m => m.TreatmentId == treatmentid);
-        if (treatment == null)
+        public async Task<IActionResult> Index()
         {
-            return NotFound();
+            return View(await _context.Treatments.ToListAsync());
         }
 
-        return View(treatment);
-    }
-
-    // GET: TREATMENTS/Create
-    public IActionResult Create()
-    {
-        return View();
-    }
-
-    // POST: TREATMENTS/Create
-    // To protect from overposting attacks, enable the specific properties you want to bind to.
-    // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("TreatmentId,AdmissionId,TreatmentDate,TreatmentDetails,MedicineGiven,Notes,Admission")] Treatment treatment)
-    {
-        if (ModelState.IsValid)
+        public async Task<IActionResult> Details(int? id)
         {
-            _context.Add(treatment);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-        return View(treatment);
-    }
+            if (id == null)
+                return NotFound();
 
-    // GET: TREATMENTS/Edit/5
-    public async Task<IActionResult> Edit(int? treatmentid)
-    {
-        if (treatmentid == null)
-        {
-            return NotFound();
+            var treatment = await _context.Treatments
+                .FirstOrDefaultAsync(m => m.TreatmentId == id);
+
+            if (treatment == null)
+                return NotFound();
+
+            return View(treatment);
         }
 
-        var treatment = await _context.Treatments.FindAsync(treatmentid);
-        if (treatment == null)
+        public IActionResult Create()
         {
-            return NotFound();
-        }
-        return View(treatment);
-    }
-
-    // POST: TREATMENTS/Edit/5
-    // To protect from overposting attacks, enable the specific properties you want to bind to.
-    // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int? treatmentid, [Bind("TreatmentId,AdmissionId,TreatmentDate,TreatmentDetails,MedicineGiven,Notes,Admission")] Treatment treatment)
-    {
-        if (treatmentid != treatment.TreatmentId)
-        {
-            return NotFound();
+            return View();
         }
 
-        if (ModelState.IsValid)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("TreatmentId,AdmissionId,TreatmentDate,TreatmentDetails,MedicineGiven,Notes")] Treatment treatment)
         {
-            try
+            if (ModelState.IsValid)
             {
-                _context.Update(treatment);
+                _context.Add(treatment);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(treatment);
+        }
+
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var treatment = await _context.Treatments.FindAsync(id);
+
+            if (treatment == null)
+                return NotFound();
+
+            return View(treatment);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("TreatmentId,AdmissionId,TreatmentDate,TreatmentDetails,MedicineGiven,Notes")] Treatment treatment)
+        {
+            if (id != treatment.TreatmentId)
+                return NotFound();
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(treatment);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!TreatmentExists(treatment.TreatmentId))
+                        return NotFound();
+                    else
+                        throw;
+                }
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(treatment);
+        }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var treatment = await _context.Treatments
+                .FirstOrDefaultAsync(m => m.TreatmentId == id);
+
+            if (treatment == null)
+                return NotFound();
+
+            return View(treatment);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var treatment = await _context.Treatments.FindAsync(id);
+
+            if (treatment != null)
+            {
+                _context.Treatments.Remove(treatment);
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!TreatmentExists(treatment.TreatmentId))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+
             return RedirectToAction(nameof(Index));
         }
-        return View(treatment);
-    }
 
-    // GET: TREATMENTS/Delete/5
-    public async Task<IActionResult> Delete(int? treatmentid)
-    {
-        if (treatmentid == null)
+        private bool TreatmentExists(int id)
         {
-            return NotFound();
+            return _context.Treatments.Any(e => e.TreatmentId == id);
         }
-
-        var treatment = await _context.Treatments
-            .FirstOrDefaultAsync(m => m.TreatmentId == treatmentid);
-        if (treatment == null)
-        {
-            return NotFound();
-        }
-
-        return View(treatment);
-    }
-
-    // POST: TREATMENTS/Delete/5
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> DeleteConfirmed(int? treatmentid)
-    {
-        var treatment = await _context.Treatments.FindAsync(treatmentid);
-        if (treatment != null)
-        {
-            _context.Treatments.Remove(treatment);
-        }
-
-        await _context.SaveChangesAsync();
-        return RedirectToAction(nameof(Index));
-    }
-
-    private bool TreatmentExists(int? treatmentid)
-    {
-        return _context.Treatments.Any(e => e.TreatmentId == treatmentid);
     }
 }
