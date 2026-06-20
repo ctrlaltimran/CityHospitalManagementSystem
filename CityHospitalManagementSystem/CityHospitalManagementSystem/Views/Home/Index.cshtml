@@ -11,6 +11,43 @@
         </p>
     </div>
 
+    <div class="row text-center mb-4">
+        <div class="col-md-2">
+            <div class="card p-3 shadow-sm">
+                <h4>@ViewBag.TotalPatients</h4>
+                <p>Total Patients</p>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="card p-3 shadow-sm">
+                <h4>@ViewBag.TotalDoctors</h4>
+                <p>Total Doctors</p>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="card p-3 shadow-sm">
+                <h4>@ViewBag.TotalAdmissions</h4>
+                <p>Admissions</p>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card p-3 shadow-sm">
+                <h4>@ViewBag.AvailableBeds</h4>
+                <p>Available Beds</p>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card p-3 shadow-sm">
+                <h4>@ViewBag.OccupiedBeds</h4>
+                <p>Occupied Beds</p>
+            </div>
+        </div>
+    </div>
+
     <div class="row text-center">
 
         <div class="col-md-3 mb-3">
@@ -40,11 +77,10 @@
         <div class="col-md-3 mb-3">
             <div class="card shadow-sm p-4">
                 <h3>Treatments</h3>
-                <p>Record patient treatment details, medicines and notes.</p>
+                <p>Record treatment details, medicines and notes.</p>
                 <a asp-controller="Treatments" asp-action="Index" class="btn btn-info">Manage Treatments</a>
             </div>
         </div>
 
     </div>
-
 </div>
