@@ -20,6 +20,10 @@ namespace CityHospitalManagementSystem.Controllers
             ViewBag.AvailableBeds = _context.Beds.Count(b => b.IsOccupied == false);
             ViewBag.OccupiedBeds = _context.Beds.Count(b => b.IsOccupied == true);
 
+            ViewBag.DischargedPatients = _context.Admissions.Count(a => a.Status == "Discharged");
+            ViewBag.EmergencyAdmissions = _context.Admissions.Count(a => a.AdmissionType == "Emergency");
+            ViewBag.MonthlyAdmissions = _context.Admissions.Count(a => a.AdmissionDate.Month == DateTime.Now.Month);
+
             return View();
         }
 

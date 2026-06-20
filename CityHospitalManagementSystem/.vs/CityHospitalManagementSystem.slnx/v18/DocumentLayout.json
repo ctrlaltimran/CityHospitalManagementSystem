@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{BA58B7A9-CD20-2B94-F4DF-436C8C7878EA}|CityHospitalManagementSystem\\CityHospitalManagementSystem.csproj|solutionrelative:cityhospitalmanagementsystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA58B7A9-CD20-2B94-F4DF-436C8C7878EA}|CityHospitalManagementSystem\\CityHospitalManagementSystem.csproj|c:\\users\\hp\\documents\\cityhospitalmanagementsystem\\cityhospitalmanagementsystem\\cityhospitalmanagementsystem\\views\\admissions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA58B7A9-CD20-2B94-F4DF-436C8C7878EA}|CityHospitalManagementSystem\\CityHospitalManagementSystem.csproj|solutionrelative:cityhospitalmanagementsystem\\views\\admissions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BA58B7A9-CD20-2B94-F4DF-436C8C7878EA}|CityHospitalManagementSystem\\CityHospitalManagementSystem.csproj|c:\\users\\hp\\documents\\cityhospitalmanagementsystem\\cityhospitalmanagementsystem\\cityhospitalmanagementsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA58B7A9-CD20-2B94-F4DF-436C8C7878EA}|CityHospitalManagementSystem\\CityHospitalManagementSystem.csproj|solutionrelative:cityhospitalmanagementsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA58B7A9-CD20-2B94-F4DF-436C8C7878EA}|CityHospitalManagementSystem\\CityHospitalManagementSystem.csproj|c:\\users\\hp\\documents\\cityhospitalmanagementsystem\\cityhospitalmanagementsystem\\cityhospitalmanagementsystem\\views\\admissions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA58B7A9-CD20-2B94-F4DF-436C8C7878EA}|CityHospitalManagementSystem\\CityHospitalManagementSystem.csproj|solutionrelative:cityhospitalmanagementsystem\\views\\admissions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA58B7A9-CD20-2B94-F4DF-436C8C7878EA}|CityHospitalManagementSystem\\CityHospitalManagementSystem.csproj|c:\\users\\hp\\documents\\cityhospitalmanagementsystem\\cityhospitalmanagementsystem\\cityhospitalmanagementsystem\\models\\treatment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -102,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\hp\\Documents\\CityHospitalManagementSystem\\CityHospitalManagementSystem\\CityHospitalManagementSystem\\Views\\Admissions\\Index.cshtml",
               "RelativeDocumentMoniker": "CityHospitalManagementSystem\\Views\\Admissions\\Index.cshtml",
@@ -110,8 +110,7 @@
               "RelativeToolTip": "CityHospitalManagementSystem\\Views\\Admissions\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-20T05:58:59.72Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T05:58:59.72Z"
             },
             {
               "$type": "Document",
@@ -121,20 +120,20 @@
               "RelativeDocumentMoniker": "CityHospitalManagementSystem\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\hp\\Documents\\CityHospitalManagementSystem\\CityHospitalManagementSystem\\CityHospitalManagementSystem\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "CityHospitalManagementSystem\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAkwEMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAwwFwAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-06-20T05:02:59.819Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\hp\\Documents\\CityHospitalManagementSystem\\CityHospitalManagementSystem\\CityHospitalManagementSystem\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "CityHospitalManagementSystem\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\hp\\Documents\\CityHospitalManagementSystem\\CityHospitalManagementSystem\\CityHospitalManagementSystem\\Controllers\\HomeController.cs",
               "RelativeToolTip": "CityHospitalManagementSystem\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAYwAsAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAiwCIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-20T07:14:37.447Z",
               "EditorCaption": ""
@@ -161,8 +160,7 @@
               "RelativeToolTip": "CityHospitalManagementSystem\\Models\\Treatment.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-20T04:03:22.141Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T04:03:22.141Z"
             },
             {
               "$type": "Document",
