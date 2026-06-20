@@ -2,7 +2,47 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold">City Hospital Management System</h1>
+        <p class="lead">
+            A simple web-based system for managing patients, doctors, admissions and hospital beds.
+        </p>
+    </div>
+
+    <div class="row text-center">
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm p-4">
+                <h3>Patients</h3>
+                <p>Add, view, update and delete patient records.</p>
+                <a asp-controller="Patients" asp-action="Index" class="btn btn-primary">
+                    Manage Patients
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm p-4">
+                <h3>Doctors</h3>
+                <p>Manage doctor specialization, ward and availability.</p>
+                <a asp-controller="Doctors" asp-action="Index" class="btn btn-success">
+                    Manage Doctors
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm p-4">
+                <h3>Admissions</h3>
+                <p>Handle patient admission, bed assignment and discharge.</p>
+                <a asp-controller="Admissions" asp-action="Index" class="btn btn-warning">
+                    Manage Admissions
+                </a>
+            </div>
+        </div>
+
+    </div>
+
 </div>
