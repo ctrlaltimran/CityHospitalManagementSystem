@@ -120,7 +120,7 @@
               "RelativeDocumentMoniker": "CityHospitalManagementSystem\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\hp\\Documents\\CityHospitalManagementSystem\\CityHospitalManagementSystem\\CityHospitalManagementSystem\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "CityHospitalManagementSystem\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAwwFwAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFwAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-06-20T05:02:59.819Z",
               "EditorCaption": ""
@@ -135,8 +135,7 @@
               "RelativeToolTip": "CityHospitalManagementSystem\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAiwCIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-20T07:14:37.447Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T07:14:37.447Z"
             },
             {
               "$type": "Document",
